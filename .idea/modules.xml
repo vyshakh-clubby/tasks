@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ablepro/.idea/Ablepro-light.iml" filepath="$PROJECT_DIR$/../ablepro/.idea/Ablepro-light.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tasks.iml" filepath="$PROJECT_DIR$/.idea/tasks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../testtasks/.idea/testtasks.iml" filepath="$PROJECT_DIR$/../testtasks/.idea/testtasks.iml" />
+    </modules>
+  </component>
+</project>
