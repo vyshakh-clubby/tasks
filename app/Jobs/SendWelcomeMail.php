@@ -15,6 +15,7 @@ use SendGrid\Mail\Mail;
 class SendWelcomeMail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    public $template    =   "";
 
 
     /**
@@ -22,9 +23,9 @@ class SendWelcomeMail implements ShouldQueue
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($template)
     {
-
+        $this->template = $template;
     }
 
     /**
@@ -34,21 +35,21 @@ class SendWelcomeMail implements ShouldQueue
      */
     public function handle()
     {
-
+        //echo "vyshakh";
 
         /*$data   =   Emails::where('current_status',1)->first();
         $emailSend  =   new WelcomeMail();
         Mail::to($data['email'])->send($emailSend);
         Emails::where('email',$data['email'])->update(['current_status'=>0]);*/
 
-        $email  =   new Mail();
+        $email = new Mail();
         $email->setFrom("vyshakh.logezy@gmail.com", "Vyshakh");
         $email->setSubject("Sample Mail");
-        $email->addTo("vyshakh@clubby.in","");
+        $email->addTo("vyshakhps1988@gmail.com","");
         $email->addContent("text/plain","Vyshakh Your first template");
 
 
-        //$email->addContent("text/html",$template);
+        $email->addContent("text/html",$this->template);
 
         $apiKey     =   getenv('SENDGRID_API_KEY');
         $sendgrid   =    new \SendGrid($apiKey);

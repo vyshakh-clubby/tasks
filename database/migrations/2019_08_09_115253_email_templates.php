@@ -16,6 +16,7 @@ class EmailTemplates extends Migration
         Schema::create('email_templates', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('templates');
+            $table->integer('current_status')->default('1');
             $table->timestamps();
         });
     }

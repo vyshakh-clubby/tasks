@@ -99,5 +99,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Ablepro-light" />
     <orderEntry type="module" module-name="testtasks" />
+    <orderEntry type="module" module-name="testtasks" />
+    <orderEntry type="module" module-name="blog" />
   </component>
 </module>

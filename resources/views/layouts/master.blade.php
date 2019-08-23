@@ -103,6 +103,7 @@
     <div class="content-wrapper">
         <div class="container-fluid">
             @include('layouts.header.breadcrumps')
+            @include('messages.flashmessage')
             @yield('contents')
 
         </div>

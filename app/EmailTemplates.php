@@ -23,4 +23,9 @@ class EmailTemplates extends Model
         }
     }
 
+    public function useTemplate(){
+        $data   =   EmailTemplates::where('current_status',1)->first();
+        return $data;
+    }
+
 }

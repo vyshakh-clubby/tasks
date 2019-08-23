@@ -16,6 +16,7 @@ class EmailLists extends Migration
         Schema::create('emails', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('email')->unique();
+            $table->integer('current_status')->default('1');
             $table->timestamps();
         });
     }

@@ -22,3 +22,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::any('upload','UploadController@index');
 Route::any('handleCsvUploads','UploadController@handleCsvUploads');
 Route::any('dashboard','DashboardController@dashboard');
+Route::any('email','JobController@processQueue');

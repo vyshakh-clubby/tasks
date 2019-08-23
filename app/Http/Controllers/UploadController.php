@@ -28,13 +28,25 @@ class UploadController extends Controller
         return view('uploads',$paramArray);
     }
 
-    public function processQueue()
+    public function processQueue($emailCount)
     {
-        $emailJob = new SendWelcomeMail();
 
-        for($i=0;$i<=5;$i++){
+        $emailTemplate   =  new EmailTemplates();
+        $useTemplate     =  $emailTemplate->useTemplate();
+
+        //dd($useTemplate['templates']);
+
+        $emailJob        =  new SendWelcomeMail($useTemplate['templates']);
+
+
+
+        for($i=1;$i<=$emailCount;$i++){
             dispatch($emailJob);
+
         }
+
+
+
 
         echo 'Mail Sent';
 
@@ -45,6 +57,8 @@ class UploadController extends Controller
 
     public function handleCsvUploads(Request $request){
         //dd($request->file('file-import'));
+
+
 
         $importedFile   =   $request->file('file-import');
         $template       =   $request->template;
@@ -68,10 +82,10 @@ class UploadController extends Controller
             $fileSize   =   $importedFile->getSize();
             $mimeType   =   $importedFile->getMimeType();
 
-            /*echo "Filename: ".$filename."</br>";
+            echo "Filename: ".$filename."</br>";
             echo "Extension: ".$extension."</br>";
             echo "File Size: ".$fileSize."</br>";
-            echo "Mime Type: ".$mimeType."</br>";*/
+            echo "Mime Type: ".$mimeType."</br>";
 
             if(in_array(strtolower($extension),$validExtension)){
                 if($fileSize<$maxFileSize){
@@ -93,23 +107,31 @@ class UploadController extends Controller
                 }
 
             }
+            else{
+                return Redirect::to('upload')->with('error','Invalid file format!');
+            }
 
             $emailsModel            =   new Emails();
             $emailUploadResponse    =   $emailsModel->handleEmailsSave($emailsArray);
 
+
+
             if($emailUploadResponse == "success"){
+
                 $location   =   "uploads";
                 $importedFile->move($location,$filename);
                 $filepath = public_path($location."/".$filename);
 
                 //sending emails
-                $this->processQueue();
+                $queueStatus = $this->processQueue(count($emailsArray));
+
+                if($queueStatus == "success"){
+                    $paramArray =   ['success'=>'File imported successfully'];
+                    //echo $paramArray['success'];
+                    return Redirect::to('upload')->with($paramArray);
+                }
 
 
-
-                $paramArray =   ['success'=>'File imported successfully'];
-                //echo $paramArray['success'];
-                return Redirect::to('upload')->with($paramArray);
 
             }
 

@@ -19,10 +19,11 @@ class JobController extends Controller
         //dispatch($emailJob);
 
 
-        $emailJob = new SendWelcomeMail();
+        $emailJob = new SendWelcomeMail('hi iam vyshakh');
+        dispatch($emailJob);
 
         for($i=0;$i<=5;$i++){
-            dispatch($emailJob);
+
         }
 
         echo 'Mail Sent';
