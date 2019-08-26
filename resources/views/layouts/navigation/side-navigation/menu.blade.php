@@ -1,11 +1,11 @@
 <ul class="sidebar-menu">
     {{--<li class="nav-level">Navigation</li>--}}
-    <li class="active treeview">
+    <li @if($currentUrl == "dashboard") class="active treeview" @else class="treeview" @endif>
         <a class="waves-effect waves-dark" href="index.html">
             <i class="icon-speedometer"></i><span> Dashboard</span>
         </a>
     </li>
-    <li class="treeview">
+    <li @if($currentUrl == "upload") class="active treeview" @else class="treeview" @endif>
         <a class="waves-effect waves-dark" href="upload">
             <i class="icon-speedometer"></i><span> Uploads</span>
         </a>

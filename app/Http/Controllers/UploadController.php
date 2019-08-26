@@ -7,6 +7,7 @@ use App\Emails;
 use App\EmailTemplates;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Redirect;
@@ -22,9 +23,25 @@ use App\Jobs\SendWelcomeMail;
 
 class UploadController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+
+        $currentUrl         =   Route::current()->uri();
+        $breadCrumps        =   "Uploads";
+        $pageTitle          =   "Uploads";
+        $title              =   "Clubby | Uploads";
         $emailTemplateData  =   EmailTemplates::where('current_status',1)->first();
-        $paramArray         =   ['templates'=>$emailTemplateData];
+
+        $emailTemplateModel =   new EmailTemplates();
+        $templateList       =   $emailTemplateModel->getTemplateList();
+
+        $paramArray         =   [
+            'templates'     =>  $emailTemplateData,
+            'currentUrl'    =>  $currentUrl,
+            'breadcrumps'   =>  $breadCrumps,
+            'pageTitle'     =>  $pageTitle,
+            'title'         =>  $title,
+            'templateList'  =>  $templateList
+        ];
         return view('uploads',$paramArray);
     }
 
@@ -48,7 +65,7 @@ class UploadController extends Controller
 
 
 
-        echo 'Mail Sent';
+        //echo 'Mail Sent';
 
 
 
@@ -62,17 +79,10 @@ class UploadController extends Controller
 
         $importedFile   =   $request->file('file-import');
         $template       =   $request->template;
+        $idTemplate     =   $request->template_id;
         $validExtension =   ["csv"];
         $maxFileSize    =   2097152;
         $emailsArray    =   [];
-
-
-        //handling email Templates
-        $emailTemplateModel     =   new EmailTemplates();
-        $emailTemplateResponse  =   $emailTemplateModel->handleEmailTempaltes($template);
-
-
-
 
 
         if($importedFile){
@@ -82,10 +92,10 @@ class UploadController extends Controller
             $fileSize   =   $importedFile->getSize();
             $mimeType   =   $importedFile->getMimeType();
 
-            echo "Filename: ".$filename."</br>";
+           /* echo "Filename: ".$filename."</br>";
             echo "Extension: ".$extension."</br>";
             echo "File Size: ".$fileSize."</br>";
-            echo "Mime Type: ".$mimeType."</br>";
+            echo "Mime Type: ".$mimeType."</br>";*/
 
             if(in_array(strtolower($extension),$validExtension)){
                 if($fileSize<$maxFileSize){
@@ -97,7 +107,7 @@ class UploadController extends Controller
 
                         if(!empty($data)){
                             foreach($data as $index=>$value){
-                                $email =    $value['email'];
+                                $email =    ltrim($value['email']);
                                 array_push($emailsArray, $email);
                             }
                         }
@@ -110,6 +120,8 @@ class UploadController extends Controller
             else{
                 return Redirect::to('upload')->with('error','Invalid file format!');
             }
+
+            //dd($emailsArray);
 
             $emailsModel            =   new Emails();
             $emailUploadResponse    =   $emailsModel->handleEmailsSave($emailsArray);
@@ -125,16 +137,38 @@ class UploadController extends Controller
                 //sending emails
                 $queueStatus = $this->processQueue(count($emailsArray));
 
-                if($queueStatus == "success"){
-                    $paramArray =   ['success'=>'File imported successfully'];
-                    //echo $paramArray['success'];
-                    return Redirect::to('upload')->with($paramArray);
-                }
+                //handling email Templates
+                $emailTemplateModel     =   new EmailTemplates();
+                $emailTemplateResponse  =   $emailTemplateModel->handleEmailTempaltes($template, $idTemplate);
+
+
+                $paramArray =   ['success'=>'File imported successfully'];
+                //echo $paramArray['success'];
+                return Redirect::to('upload')->with($paramArray);
 
 
 
             }
 
         }
+    }
+
+    public function getTemplateList(Request $request){
+        $emailTemplate  =   new EmailTemplates();
+        $data           =   $emailTemplate->getTemplateList();
+
+
+
+        $json_data = array(
+            "draw"            => count($data),
+            "recordsTotal"    => count($data),
+            "recordsFiltered" => count($data),
+            "data"            => $data   // total data array
+        );
+
+        //dd($json_data);
+
+        echo json_encode($json_data);
+
     }
 }

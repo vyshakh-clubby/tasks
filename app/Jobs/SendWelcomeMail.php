@@ -35,32 +35,30 @@ class SendWelcomeMail implements ShouldQueue
      */
     public function handle()
     {
-        //echo "vyshakh";
 
-        /*$data   =   Emails::where('current_status',1)->first();
-        $emailSend  =   new WelcomeMail();
-        Mail::to($data['email'])->send($emailSend);
-        Emails::where('email',$data['email'])->update(['current_status'=>0]);*/
-
-        $email = new Mail();
-        $email->setFrom("vyshakh.logezy@gmail.com", "Vyshakh");
-        $email->setSubject("Sample Mail");
-        $email->addTo("vyshakhps1988@gmail.com","");
-        $email->addContent("text/plain","Vyshakh Your first template");
-
-
-        $email->addContent("text/html",$this->template);
-
+        $emailFrom  =   getenv('MAIL_FROM');
         $apiKey     =   getenv('SENDGRID_API_KEY');
         $sendgrid   =    new \SendGrid($apiKey);
+        $data       =   Emails::where('current_status',1)->first();
+
+
+        $email = new Mail();
+        $email->setFrom($emailFrom, "Vyshakh");
+        $email->setSubject("Reminder Mail");
+        $email->addTo($data['email'],"");
+        $email->addContent("text/plain","Test mail");
+        $email->addContent("text/html",$this->template);
+
+
 
 
 
         try {
 
             $response = $sendgrid->send($email);
-            print $response->statusCode() . "\n";
-            print_r($response->headers());
+            Emails::where('email',$data['email'])->update(['current_status'=>0]);
+            //print $response->statusCode() . "\n";
+            //print_r($response->headers());
             print $response->body() . "\n";
         } catch (Exception $e) {
 
