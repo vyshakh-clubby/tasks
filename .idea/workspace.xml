@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="60106f20-a090-4fcc-ab15-1c3b1208e9a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/EmailTemplates.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EmailTemplates.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/main.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/main.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/uploads/uploads.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/uploads/uploads.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/breadcrumps.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/breadcrumps.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navigation/side-navigation/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navigation/side-navigation/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/uploads.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/uploads.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../testtasks/app/Jobs/SendWelcomeMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/../testtasks/app/Jobs/SendWelcomeMail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../testtasks/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../testtasks/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../testtasks/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../testtasks/storage/app/.gitignore" afterDir="false" />
@@ -51,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UploadController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="109" column="66" selection-start-line="109" selection-start-column="66" selection-end-line="109" selection-end-column="66" />
+            <state relative-caret-position="988">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
               <folding>
                 <element signature="e#49#64#0#PHP" expanded="true" />
               </folding>
@@ -102,8 +92,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/EmailTemplates.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+            <state relative-caret-position="566">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="722">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
@@ -111,7 +110,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="779">
               <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
               <folding>
                 <element signature="e#28#43#0#PHP" expanded="true" />
@@ -123,7 +122,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-08-26.log">
           <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="17">
+            <state relative-caret-position="612731">
               <caret line="32249" column="121" selection-start-line="32249" selection-start-column="121" selection-end-line="32249" selection-end-column="121" />
             </state>
           </provider>
@@ -481,18 +480,19 @@
       <workItem from="1566621965854" duration="7334000" />
       <workItem from="1566643570618" duration="3790000" />
       <workItem from="1566792259926" duration="3723000" />
-      <workItem from="1566801379297" duration="834000" />
+      <workItem from="1566801379297" duration="1555000" />
+      <workItem from="1566878917524" duration="921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29118000" />
+    <option name="totallyTimeSpent" value="30760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21647818" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2197092" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -624,13 +624,6 @@
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-08-23.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/navigation/side-navigation/sidenavigation.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -683,6 +676,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UploadController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="e#49#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/uploads.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
@@ -711,16 +714,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/EmailTemplates.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="779">
           <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
           <folding>
             <element signature="e#28#43#0#PHP" expanded="true" />
@@ -730,18 +726,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-08-26.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="17">
+        <state relative-caret-position="612731">
           <caret line="32249" column="121" selection-start-line="32249" selection-start-column="121" selection-end-line="32249" selection-end-column="121" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UploadController.php">
+    <entry file="file://$PROJECT_DIR$/app/EmailTemplates.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="109" column="66" selection-start-line="109" selection-start-column="66" selection-end-line="109" selection-end-column="66" />
-          <folding>
-            <element signature="e#49#64#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="566">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>

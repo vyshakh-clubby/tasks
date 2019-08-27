@@ -50,32 +50,16 @@ class UploadController extends Controller
 
         $emailTemplate   =  new EmailTemplates();
         $useTemplate     =  $emailTemplate->useTemplate();
-
-        //dd($useTemplate['templates']);
-
         $emailJob        =  new SendWelcomeMail($useTemplate['templates']);
-
-
 
         for($i=1;$i<=$emailCount;$i++){
             dispatch($emailJob);
 
         }
 
-
-
-
-        //echo 'Mail Sent';
-
-
-
-
     }
 
     public function handleCsvUploads(Request $request){
-        //dd($request->file('file-import'));
-
-
 
         $importedFile   =   $request->file('file-import');
         $template       =   $request->template;
