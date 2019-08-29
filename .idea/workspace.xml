@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60106f20-a090-4fcc-ab15-1c3b1208e9a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/EmailTemplates.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EmailTemplates.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/WelcomeMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/WelcomeMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/uploads/uploads.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/uploads/uploads.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/test.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/uploads.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/uploads.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../testtasks/app/Jobs/SendWelcomeMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/../testtasks/app/Jobs/SendWelcomeMail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../testtasks/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../testtasks/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../testtasks/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../testtasks/storage/app/.gitignore" afterDir="false" />
@@ -48,7 +40,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/js/uploads/uploads.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="513">
@@ -96,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="74" column="29" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
+            <state relative-caret-position="412">
+              <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
               <folding>
                 <element signature="e#28#43#0#PHP" expanded="true" />
               </folding>
@@ -120,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Mail/WelcomeMail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
+            <state relative-caret-position="741">
               <caret line="39" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="e#28#57#0#PHP" expanded="true" />
@@ -182,10 +174,10 @@
         <option value="$PROJECT_DIR$/resources/views/emails/test.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/EmailTemplates.php" />
-        <option value="$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php" />
         <option value="$PROJECT_DIR$/resources/views/uploads.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" />
         <option value="$PROJECT_DIR$/public/assets/js/uploads/uploads.js" />
+        <option value="$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php" />
       </list>
     </option>
   </component>
@@ -504,12 +496,12 @@
       <workItem from="1566792259926" duration="3723000" />
       <workItem from="1566801379297" duration="1555000" />
       <workItem from="1566878917524" duration="2809000" />
-      <workItem from="1566991732650" duration="13993000" />
+      <workItem from="1566991732650" duration="14229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46641000" />
+    <option name="totallyTimeSpent" value="46877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="731" extended-state="0" />
@@ -801,33 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/EmailTemplates.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="839">
-          <caret line="52" column="77" selection-start-line="52" selection-start-column="77" selection-end-line="52" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Mail/WelcomeMail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#28#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="74" column="29" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
-          <folding>
-            <element signature="e#28#43#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/uploads.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
@@ -849,6 +814,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/EmailTemplates.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="839">
+          <caret line="52" column="77" selection-start-line="52" selection-start-column="77" selection-end-line="52" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/WelcomeMail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#28#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+          <folding>
+            <element signature="e#28#43#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

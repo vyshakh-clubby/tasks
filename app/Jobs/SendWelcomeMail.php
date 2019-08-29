@@ -72,7 +72,9 @@ class SendWelcomeMail implements ShouldQueue
 
 
         $emailSend  =   new WelcomeMail($this->template);
-        Mail::to($data['email'])->send($emailSend);
+        Mail::to($data['email'])
+            ->subject("Reminder Mail")
+            ->send($emailSend);
         Emails::where('email',$data['email'])->update(['current_status'=>0]);
 
 
