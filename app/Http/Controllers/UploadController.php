@@ -126,9 +126,11 @@ class UploadController extends Controller
                     $emailTemplateResponse  =   $emailTemplateModel->handleEmailTempaltes($template, $idTemplate);
 
 
-                    $paramArray =   ['success'=>'File imported successfully'];
+                    //$paramArray =   ['success'=>'File imported successfully'];
                     //echo $paramArray['success'];
-                    return Redirect::to('upload')->with($paramArray);
+                    //return Redirect::to('upload')->with($paramArray);
+
+                    return back()->with("success","File imported successfully.");
 
 
 

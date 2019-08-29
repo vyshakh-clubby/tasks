@@ -5,6 +5,7 @@
 @endsection
 
 
+
 @section('contents')
     @csrf
     <div class="row">
