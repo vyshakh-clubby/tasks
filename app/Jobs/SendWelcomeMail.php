@@ -36,8 +36,8 @@ class SendWelcomeMail implements ShouldQueue
     public function handle()
     {
 
-        $emailFrom  =   getenv('MAIL_FROM');
-        $apiKey     =   getenv('SENDGRID_API_KEY');
+        $emailFrom  =   env('MAIL_FROM');
+        $apiKey     =   env('SENDGRID_API_KEY');
 
         //$emailFrom  =   "vyshakh@clubby.in";
         //$apiKey     =   "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";
