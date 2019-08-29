@@ -114,9 +114,9 @@ class UploadController extends Controller
 
                 if($emailUploadResponse == "success"){
 
-                    $location   =   "uploads";
+                    /*$location   =   "uploads";
                     $importedFile->move($location,$filename);
-                    $filepath = public_path($location."/".$filename);
+                    $filepath = public_path($location."/".$filename);*/
 
                     //sending emails
                     $queueStatus = $this->processQueue(count($emailsArray));
