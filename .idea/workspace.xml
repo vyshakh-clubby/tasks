@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60106f20-a090-4fcc-ab15-1c3b1208e9a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/uploads.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/uploads.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../testtasks/app/Jobs/SendWelcomeMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/../testtasks/app/Jobs/SendWelcomeMail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../testtasks/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../testtasks/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../testtasks/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../testtasks/storage/app/.gitignore" afterDir="false" />
@@ -88,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+            <state relative-caret-position="526">
+              <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
               <folding>
                 <element signature="e#28#43#0#PHP" expanded="true" />
               </folding>
@@ -100,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/uploads.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="62" column="67" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="67" />
+            <state relative-caret-position="211">
+              <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -174,10 +174,10 @@
         <option value="$PROJECT_DIR$/resources/views/emails/test.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/EmailTemplates.php" />
-        <option value="$PROJECT_DIR$/resources/views/uploads.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" />
         <option value="$PROJECT_DIR$/public/assets/js/uploads/uploads.js" />
         <option value="$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php" />
+        <option value="$PROJECT_DIR$/resources/views/uploads.blade.php" />
       </list>
     </option>
   </component>
@@ -496,12 +496,12 @@
       <workItem from="1566792259926" duration="3723000" />
       <workItem from="1566801379297" duration="1555000" />
       <workItem from="1566878917524" duration="2809000" />
-      <workItem from="1566991732650" duration="14229000" />
+      <workItem from="1566991732650" duration="14345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46877000" />
+    <option name="totallyTimeSpent" value="46993000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="731" extended-state="0" />
@@ -793,13 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/uploads.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="62" column="67" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UploadController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
@@ -836,11 +829,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Jobs/SendWelcomeMail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+        <state relative-caret-position="526">
+          <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
           <folding>
             <element signature="e#28#43#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/uploads.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
         </state>
       </provider>
     </entry>
