@@ -41,9 +41,13 @@ class SendWelcomeMail implements ShouldQueue
         $sendgrid   =    new \SendGrid($apiKey);
         $data       =   Emails::where('current_status',1)->first();
 
+        echo $emailFrom.":".$data['email'];
+        dd();
 
-        $email = new Mail();
-        $email->setFrom($emailFrom, "Vyshakh");
+
+
+        /*$email = new Mail();
+        $email->setFrom('vyshakh@clubby.in', "Vyshakh");
         $email->setSubject("Reminder Mail");
         $email->addTo($data['email'],"");
         $email->addContent("text/plain","Test mail");
@@ -63,7 +67,7 @@ class SendWelcomeMail implements ShouldQueue
         } catch (Exception $e) {
 
             echo 'Caught exception: '. $e->getMessage() ."\n";
-        }
+        }*/
 
 
 
