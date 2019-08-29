@@ -139,7 +139,7 @@ class UploadController extends Controller
             }
         }
         else{
-            return back()->with("error","Please fill the empty fields")->withInput();
+            return back()->with("error","Please fill the empty fields");
         }
 
 
@@ -161,6 +161,14 @@ class UploadController extends Controller
         //dd($json_data);
 
         echo json_encode($json_data);
+
+    }
+
+    public function updateTemplateStatus(Request $request){
+        $id = $request['id'];
+        $templateModel  =   new EmailTemplates();
+        $response       =   $templateModel->changeTemplateStatus($id);
+        return json_encode($response);
 
     }
 }

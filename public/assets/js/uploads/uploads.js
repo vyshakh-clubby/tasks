@@ -24,9 +24,23 @@ $(document).ready(function() {
                 $('#template_list tr').click(function(){
                     var idTemplate  =   $(this).find('td').attr('data-id');
                     var template    =   $(this).find('td').attr('data-template');
-
-                    $('.templates').text(template);
+                    var dataString  =   'id='+idTemplate+'&_token='+_token;
+                    $('.templates').val(template);
                     $('.template_id').val(idTemplate);
+                    console.log(template);
+
+
+
+                    $.ajax({
+                        type: "POST",
+                        url: 'updateTemplateStatus',
+                        data: dataString,
+                        success: function(data)
+                        {
+
+                        }
+                    });
+
 
                 })
 

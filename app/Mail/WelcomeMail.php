@@ -10,16 +10,16 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class WelcomeMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $name = "";
+    public $template = "";
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($template)
     {
-       // $this->name = $username;
+        $this->template = $template;
 
     }
 
@@ -33,7 +33,8 @@ class WelcomeMail extends Mailable
        // return $this->view('view.name');
         //dd("ds");
 
-       return $this->view('emails.welcome')->with(['name' => 'Suru']);
+
+       return $this->view('emails.test', ['template'=>$this->template]);
 
 
 

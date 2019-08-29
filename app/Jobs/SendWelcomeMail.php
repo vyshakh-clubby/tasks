@@ -9,9 +9,9 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-//use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Config;
-use SendGrid\Mail\Mail;
+//use SendGrid\Mail\Mail;
 
 
 class SendWelcomeMail implements ShouldQueue
@@ -41,21 +41,13 @@ class SendWelcomeMail implements ShouldQueue
         $emailConfig    =   Config::get('mail.from');
         $emailFrom      =   $emailConfig["address"];
         $emailFromName  =   $emailConfig["name"];
-
-        $apiKey         =   Config::get("mail.sendgrid_api_key");
-        //$apiKey     =   getenv('SENDGRID_API_KEY');
-
-        //$emailFrom  =   "vyshakh@clubby.in";
-        //$apiKey     =   "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";
-        $sendgrid   =    new \SendGrid($apiKey);
-        $data       =   Emails::where('current_status',1)->first();
-
-        //dd($apiKey);
+        //$apiKey         =   Config::get("mail.sendgrid_api_key");
+        //$sendgrid       =   new \SendGrid($apiKey);
+        $data           =   Emails::where('current_status',1)->first();
 
 
 
-
-        $email = new Mail();
+        /*$email = new Mail();
         $email->setFrom($emailFrom, $emailFromName);
         $email->setSubject("Reminder Mail");
         $email->addTo($data['email'],"");
@@ -76,7 +68,12 @@ class SendWelcomeMail implements ShouldQueue
         } catch (Exception $e) {
 
             echo 'Caught exception: '. $e->getMessage() ."\n";
-        }
+        }*/
+
+
+        $emailSend  =   new WelcomeMail($this->template);
+        Mail::to($data['email'])->send($emailSend);
+        Emails::where('email',$data['email'])->update(['current_status'=>0]);
 
 
 

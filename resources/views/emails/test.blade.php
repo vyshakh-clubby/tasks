@@ -1,1 +1,1 @@
-@php print_r($template); @endphp
+@php print_r($template);  @endphp

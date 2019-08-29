@@ -28,7 +28,7 @@
 
 
                         <div class="md-input-wrapper">
-                            {!! Form::hidden('template_id',null,['class'=>'template_id']) !!}
+                            {!! Form::text('template_id',null,['class'=>'template_id']) !!}
                             {!! Form::textarea('template',$templates['templates'],['class'=>'md-form-control md-static templates', 'rows'=>10, 'cols'=>4]) !!}
                             <label>Template </label>
                         </div>

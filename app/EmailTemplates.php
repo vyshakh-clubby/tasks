@@ -47,5 +47,16 @@ class EmailTemplates extends Model
         $data   =   EmailTemplates::get();
         return $data;
     }
+    public function changeTemplateStatus($id){
+        if(!empty($id)){
+            EmailTemplates::where('id',$id)->update(['current_status'=>1]);
+            EmailTemplates::where('id','!=',$id)->update(['current_status'=>0]);
+            return "success";
+
+        }
+        else{
+            return "error";
+        }
+    }
 
 }
