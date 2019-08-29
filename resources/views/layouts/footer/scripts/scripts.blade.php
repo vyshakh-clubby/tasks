@@ -53,7 +53,7 @@ crossorigin="anonymous"></script>
 
 <script>
     function removeloader(){
-        alert("ds")
+        //alert("ds")
     }
 </script>
 
