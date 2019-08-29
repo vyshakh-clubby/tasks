@@ -36,8 +36,11 @@ class SendWelcomeMail implements ShouldQueue
     public function handle()
     {
 
-        $emailFrom  =   getenv('MAIL_FROM');
-        $apiKey     =   getenv('SENDGRID_API_KEY');
+        //$emailFrom  =   getenv('MAIL_FROM');
+        //$apiKey     =   getenv('SENDGRID_API_KEY');
+
+        $emailFrom  =   "vyshakh@clubby.in";
+        $apiKey     =   "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";
         $sendgrid   =    new \SendGrid($apiKey);
         $data       =   Emails::where('current_status',1)->first();
 
