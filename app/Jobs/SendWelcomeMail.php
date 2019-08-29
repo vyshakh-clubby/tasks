@@ -41,7 +41,7 @@ class SendWelcomeMail implements ShouldQueue
         $sendgrid   =    new \SendGrid($apiKey);
         $data       =   Emails::where('current_status',1)->first();
 
-        echo $emailFrom.":".$sendgrid;
+        echo "From:".$emailFrom;
         dd();
 
 
