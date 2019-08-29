@@ -10,7 +10,9 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 //use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Config;
 use SendGrid\Mail\Mail;
+
 
 class SendWelcomeMail implements ShouldQueue
 {
@@ -36,21 +38,25 @@ class SendWelcomeMail implements ShouldQueue
     public function handle()
     {
 
-        $emailFrom  =   config('MAIL_FROM');
-        $apiKey     =   config('SENDGRID_API_KEY');
+        $emailConfig    =   Config::get('mail.from');
+        $emailFrom      =   $emailConfig["address"];
+        $emailFromName  =   $emailConfig["name"];
 
-        $emailFrom  =   "vyshakh@clubby.in";
-        $apiKey     =   "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";
+        $apiKey         =   Config::get("mail.sendgrid_api_key");
+        //$apiKey     =   getenv('SENDGRID_API_KEY');
+
+        //$emailFrom  =   "vyshakh@clubby.in";
+        //$apiKey     =   "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";
         $sendgrid   =    new \SendGrid($apiKey);
         $data       =   Emails::where('current_status',1)->first();
 
-        dd($apiKey);
+        //dd($apiKey);
 
 
 
 
         $email = new Mail();
-        $email->setFrom('vyshakh@clubby.in', "Vyshakh");
+        $email->setFrom($emailFrom, $emailFromName);
         $email->setSubject("Reminder Mail");
         $email->addTo($data['email'],"");
         $email->addContent("text/plain","Test mail");

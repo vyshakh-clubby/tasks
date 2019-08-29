@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'vyshakh.logezy@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', ''),
+        'name' => env('MAIL_FROM_NAME', ''),
     ],
 
     /*
@@ -84,11 +84,11 @@ return [
     |
     */
 
-    //'username' => env('MAIL_USERNAME'),
-    'username' => 'vyshakh@clubby.in',
+    'username' => env('MAIL_USERNAME'),
+    //'username' => 'vyshakh@clubby.in',
 
-    //'password' => env('MAIL_PASSWORD'),
-    'password' => 'v@2529341',
+    'password' => env('MAIL_PASSWORD'),
+    //'password' => 'v@2529341',
 
     /*
     |--------------------------------------------------------------------------
@@ -142,5 +142,7 @@ return [
             'verify_peer_name' => false,
         ],
     ],
+
+    'sendgrid_api_key'  =>  env('SENDGRID_API_KEY',""),
 
 ];
