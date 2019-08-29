@@ -78,8 +78,6 @@
 @section('scripts')
     <script type="text/javascript" src="https://cdn.datatables.net/r/dt/dt-1.10.9/datatables.min.js"></script>
     <script src="{{ URL::to('assets/js/uploads/uploads.js') }}"></script>
-    <script>
 
-    </script>
 @endsection
 

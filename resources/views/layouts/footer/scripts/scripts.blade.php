@@ -1,4 +1,9 @@
-<script src="{{ URL::to('assets/plugins/jquery/dist/jquery.min.js') }}"></script>
+{{--<script src="{{ URL::to('assets/plugins/jquery/dist/jquery.min.js') }}"></script>--}}
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+
 <script src="{{ URL::to('assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <script src="{{ URL::to('assets/plugins/tether/dist/js/tether.min.js') }}"></script>
 
@@ -42,8 +47,14 @@
 
 <!-- custom js -->
 <script src="{{ URL::to('assets/js/main.min.js') }}"></script>
-<script src="{{ URL::to('assets/pages/dashboard.js') }}"></script>
+{{--<script src="{{ URL::to('assets/pages/dashboard.js') }}"></script>--}}
 <script src="{{ URL::to('assets/pages/elements.js') }}"></script>
 <script src="{{ URL::to('assets/js/menu.min.js') }}"></script>
+
+<script>
+    function removeloader(){
+        alert("ds")
+    }
+</script>
 
 @yield('scripts')

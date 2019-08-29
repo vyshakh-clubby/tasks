@@ -68,73 +68,79 @@ class UploadController extends Controller
         $maxFileSize    =   2097152;
         $emailsArray    =   [];
 
+        if(!empty($importedFile) && !empty($template)){
+            if($importedFile){
+                $path       =   $importedFile->getRealPath();
+                $filename   =   $importedFile->getClientOriginalName();
+                $extension  =   $importedFile->getClientOriginalExtension();
+                $fileSize   =   $importedFile->getSize();
+                $mimeType   =   $importedFile->getMimeType();
 
-        if($importedFile){
-            $path       =   $importedFile->getRealPath();
-            $filename   =   $importedFile->getClientOriginalName();
-            $extension  =   $importedFile->getClientOriginalExtension();
-            $fileSize   =   $importedFile->getSize();
-            $mimeType   =   $importedFile->getMimeType();
+                /* echo "Filename: ".$filename."</br>";
+                 echo "Extension: ".$extension."</br>";
+                 echo "File Size: ".$fileSize."</br>";
+                 echo "Mime Type: ".$mimeType."</br>";*/
 
-           /* echo "Filename: ".$filename."</br>";
-            echo "Extension: ".$extension."</br>";
-            echo "File Size: ".$fileSize."</br>";
-            echo "Mime Type: ".$mimeType."</br>";*/
+                if(in_array(strtolower($extension),$validExtension)){
+                    if($fileSize<$maxFileSize){
 
-            if(in_array(strtolower($extension),$validExtension)){
-                if($fileSize<$maxFileSize){
-
-                    $data   =   Excel::load($path)->get();
-
-                    if(!empty($data)){
-                        $data = $data->toArray();
+                        $data   =   Excel::load($path)->get();
 
                         if(!empty($data)){
-                            foreach($data as $index=>$value){
-                                $email =    ltrim($value['email']);
-                                array_push($emailsArray, $email);
+                            $data = $data->toArray();
+
+                            if(!empty($data)){
+                                foreach($data as $index=>$value){
+                                    $email =    ltrim($value['email']);
+                                    array_push($emailsArray, $email);
+                                }
                             }
+
                         }
 
                     }
 
                 }
+                else{
+                    return Redirect::to('upload')->with('error','Invalid file format!');
+                }
+
+                //dd($emailsArray);
+
+                $emailsModel            =   new Emails();
+                $emailUploadResponse    =   $emailsModel->handleEmailsSave($emailsArray);
+
+
+
+                if($emailUploadResponse == "success"){
+
+                    $location   =   "uploads";
+                    $importedFile->move($location,$filename);
+                    $filepath = public_path($location."/".$filename);
+
+                    //sending emails
+                    $queueStatus = $this->processQueue(count($emailsArray));
+
+                    //handling email Templates
+                    $emailTemplateModel     =   new EmailTemplates();
+                    $emailTemplateResponse  =   $emailTemplateModel->handleEmailTempaltes($template, $idTemplate);
+
+
+                    $paramArray =   ['success'=>'File imported successfully'];
+                    //echo $paramArray['success'];
+                    return Redirect::to('upload')->with($paramArray);
+
+
+
+                }
 
             }
-            else{
-                return Redirect::to('upload')->with('error','Invalid file format!');
-            }
-
-            //dd($emailsArray);
-
-            $emailsModel            =   new Emails();
-            $emailUploadResponse    =   $emailsModel->handleEmailsSave($emailsArray);
-
-
-
-            if($emailUploadResponse == "success"){
-
-                $location   =   "uploads";
-                $importedFile->move($location,$filename);
-                $filepath = public_path($location."/".$filename);
-
-                //sending emails
-                $queueStatus = $this->processQueue(count($emailsArray));
-
-                //handling email Templates
-                $emailTemplateModel     =   new EmailTemplates();
-                $emailTemplateResponse  =   $emailTemplateModel->handleEmailTempaltes($template, $idTemplate);
-
-
-                $paramArray =   ['success'=>'File imported successfully'];
-                //echo $paramArray['success'];
-                return Redirect::to('upload')->with($paramArray);
-
-
-
-            }
-
         }
+        else{
+            return back()->with("error","Please fill the empty fields")->withInput();
+        }
+
+
     }
 
     public function getTemplateList(Request $request){
