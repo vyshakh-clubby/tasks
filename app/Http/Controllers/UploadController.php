@@ -7,7 +7,7 @@ use App\Emails;
 use App\EmailTemplates;
 
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Config;
+//use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
