@@ -34,7 +34,7 @@ class WelcomeMail extends Mailable
         //dd("ds");
 
 
-       return $this->view('emails.test', ['template'=>$this->template]);
+       return $this->view('emails.test', ['template'=>$this->template])->subject("Reminder Mail");
 
 
 
